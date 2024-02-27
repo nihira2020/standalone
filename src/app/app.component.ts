@@ -7,19 +7,9 @@ import { NgxMaskDirective } from 'ngx-mask';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet,NgxMaskDirective],
+  imports: [CommonModule, RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent implements OnInit {
-  title = 'standalone';
-
-  constructor(private service:MasterService){
-
-  }
-  ngOnInit(): void {
-     this.service.Getall().subscribe(item=>{
-      console.log(item);
-     })
-  }
+export class AppComponent {
 }
