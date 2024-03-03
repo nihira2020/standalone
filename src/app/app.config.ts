@@ -6,10 +6,11 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { DataService } from './service/data.service';
 import { provideHttpClient } from '@angular/common/http';
 import { provideEnvironmentNgxMask } from 'ngx-mask';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 export const appConfig: ApplicationConfig = {
   providers: [provideRouter(routes),provideHttpClient(),
     importProvidersFrom(HttpClientInMemoryWebApiModule.forRoot(DataService)),
-    provideEnvironmentNgxMask()
+    provideEnvironmentNgxMask(), provideAnimationsAsync()
   ]
 };
